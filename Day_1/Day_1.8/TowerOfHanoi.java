@@ -19,3 +19,12 @@ class TowerOfHanoi{
 	}
 }
 
+ //Output
+
+ // Disk from A to C
+ // Disk from A to B
+ // Disk from C to B
+ // Disk from A to C
+ // Disk from B to A
+ // Disk from B to C
+ // Disk from A to C
