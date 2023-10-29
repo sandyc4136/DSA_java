@@ -23,6 +23,7 @@
         }
         
     }
+    
     int count(){
         int count=0;
         Node n=head;
@@ -32,6 +33,33 @@
         }
         return count;
     }
+    boolean search(int x){
+        Node temp=head;
+        while(temp!=null){
+        if(temp.data==x)
+        return true;
+        temp=temp.next;
+        }
+        return false;
+    }
+
+    /*int recursiveCount(Node n){
+        // base case
+        Node n=head;
+        if(n==null)
+        return 0;
+        return 1+recursiveCount(n.next);
+    }*/
+
+    Node reverse(Node head){
+        Node current =head;
+        Node prev=null;
+        Node next=null;
+        while(current!=null){
+            next=current.nex
+        }
+
+    }
     public static void main(String args[]){
         Linkedlist10 L1=new Linkedlist10();
         L1.head=new Node(10);
@@ -39,8 +67,9 @@
         L1.insert(30);
         L1.display();
         System.out.println();
-
-        System.out.print("Total node count = "+ L1.count());
-
+        System.out.println("Total node count = "+ L1.count());
+        System.out.println("30 present in the list - "+ L1.search(30));
+        //System.out.print("Total node count = "+ recursiveCount(head));
+ 
     }
 }
