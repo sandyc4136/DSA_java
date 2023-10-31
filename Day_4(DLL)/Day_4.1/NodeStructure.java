@@ -17,3 +17,4 @@ class NodeStructure{
         System.out.println(DL1.head.next);
     }
 }
+ 
