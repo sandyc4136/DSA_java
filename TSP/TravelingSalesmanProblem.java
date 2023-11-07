@@ -2,19 +2,19 @@ import java.util.Arrays;
 
 public class TravelingSalesmanProblem {
 
-    public static int tsp(int visited, int curr, int n, int result[][], int dist[][], int ans) {
+    public static int tsp(int visited, int curr, int n, int result[][], int dist[][], int inf) {
         // If all cities have been visited, return to the starting city
         if (visited == (1 << n) - 1) {
             return dist[curr][0]; // retruns the distance from the current city to the origin city
         }
 
-        // If the result for the current state is memoized, return it
+        // lookup case : If the result for the current state is memoized, return it
         if (result[visited][curr] != -1) {
             return result[visited][curr];
         }
 
         // Initialize the minimum cost to a high value
-        int newAns = ans;
+        int ans=inf;
 
         // Try to go through all cities
         for (int city = 0; city < n; city++) {
@@ -22,8 +22,9 @@ public class TravelingSalesmanProblem {
             if ((visited & (1 << city)) == 0) {
                 // Calculate the cost of visiting the city and recursively
                 // explore the path
-                ans = Math.min(ans, tsp(visited | (1 << city), city, n,result,dist,ans)
-                        + dist[curr][city]);
+                int newAns=tsp(visited | (1 << city), city, n,result,dist,ans)
+                        + dist[curr][city];
+                ans = Math.min(ans,newAns );
             }
         }
 
@@ -35,7 +36,7 @@ public class TravelingSalesmanProblem {
         //inf representing infinity, typically used for unreachable
         // or extremely high cost.
         final int inf = 9999999;
-        // The grid array represents the distances between cities in a 4x4 matrix.
+        // The dist array represents the distances between cities in a 4x4 matrix.
         int[][] dist = {
                 {0, 20, 42, 25},
                 {20, 0, 30, 34},
