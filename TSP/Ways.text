@@ -1,4 +1,5 @@
-1. Bruteforce
-2. Dynamic progamming
+1. Bruteforce/ Naive approach 
+2. Dynamic progamming with bit masking 
 3. Incremental insertion method
+4. Greedy approach
 

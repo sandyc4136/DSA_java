@@ -35,7 +35,7 @@ public class TravelingSalesmanProblem {
     public static void main(String[] args) {
         //inf representing infinity, typically used for unreachable
         // or extremely high cost.
-        final int inf = 9999999;
+        final int inf = 9999999; 
         // The dist array represents the distances between cities in a 4x4 matrix.
         int[][] dist = {
                 {0, 20, 42, 25},
